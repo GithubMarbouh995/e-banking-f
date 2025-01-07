@@ -24,7 +24,7 @@ services:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://registry-service:8761/eureka/
 
   cloud-gateway:
-    build: ./CloudGateway
+    build: ./Cloud_Gateway
     ports:
       - "9090:9090"
     networks:
@@ -49,7 +49,7 @@ services:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://registry-service:8761/eureka/
       - SPRING_CLOUD_CONFIG_URI=http://config-server:8888
   transactions-service:
-    build: ./TransactionsService
+    build: ./GestionTransactions
     ports:
       - "8083:8083"
     networks:
@@ -61,7 +61,7 @@ services:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://registry-service:8761/eureka/
       - SPRING_CLOUD_CONFIG_URI=http://config-server:8888
   users-service:
-    build: ./UsersService
+    build: ./gestionUser
     ports:
       - "8081:8081"
     networks:
@@ -73,7 +73,7 @@ services:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://registry-service:8761/eureka/
       - SPRING_CLOUD_CONFIG_URI=http://config-server:8888
   portefeuille-service:
-    build: ./PortefeuilleService
+    build: ./microservice_portefeuille
     ports:
       - "8084:8084"
     networks:
